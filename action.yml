@@ -1,0 +1,18 @@
+name: cerberus-bci
+description: Your github action to trigger a campaign execution and get the result
+author: cerberus-testing
+inputs:
+  author:
+    description: 'the name of the person who trigger the execution.'
+  host: 
+    description: 'the host of your cerberus instance.'
+  campaign:
+    description: 'the name of the campaign to execute.'
+  apikey: 
+    description: 'your cerberus apikey.'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'arrow-down'
+  color: 'white'
