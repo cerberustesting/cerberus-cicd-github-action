@@ -1,6 +1,6 @@
-name: cerberus-bci
+name: cerberus-action
 description: Your github action to trigger a campaign execution and get the result
-author: cerberus-testing
+author: cerberustesting
 inputs:
   author:
     description: 'the name of the person who trigger the execution.'
