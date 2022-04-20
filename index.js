@@ -18,7 +18,7 @@ const host = getInput('host');
 const campaign = getInput('campaign');
 const apikey = getInput('apikey');
        
-const gitCloneCmd    = `git clone https://github.com/bcivel/cerberus-github-action.git`;
+const gitCloneCmd    = `git clone https://github.com/cerberustesting/cerberus-github-action.git`;
 const chmodCmd    = `chmod +x cerberus-github-action/launchTest.sh`;
 const launchTestCmd = `cerberus-github-action/launchTest.sh -a ${author} -h ${host} -c ${campaign} -k ${apikey}`;
 
