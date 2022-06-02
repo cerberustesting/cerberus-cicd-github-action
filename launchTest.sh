@@ -50,12 +50,11 @@ fi
 if [[ "$TAG" != "" ]]; 
 then
     echo "Override Tag: $TAG";
-    EXTRA_ARGS+=(-d "tag=$TAG")
+    tag=$TAG
 else
     tag=$CAMPAIGN.$AUTHOR.$(date +%s)
-    EXTRA_ARGS+=(-d "tag=$tag")
 fi
-
+EXTRA_ARGS+=(-d "tag=$tag")
 
 ###Run Campaign
 curl -s --request POST --url "$HOST/AddToExecutionQueueV003" -d campaign=$CAMPAIGN "${EXTRA_ARGS[@]}" -H "apikey:$APIKEY"
