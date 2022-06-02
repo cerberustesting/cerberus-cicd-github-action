@@ -17,14 +17,22 @@ const author = getInput('author');
 const host = getInput('host');
 const campaign = getInput('campaign');
 const apikey = getInput('apikey');
+const country = "-C " + getInput('country');
+const environment = "-E " + getInput('environment');
+const robot = "-R " + getInput('robot');
+const tag = "-T " + getInput('tag');
        
 const gitCloneCmd    = `git clone https://github.com/cerberustesting/cerberus-github-action.git`;
 const chmodCmd    = `chmod +x cerberus-github-action/launchTest.sh`;
-const launchTestCmd = `cerberus-github-action/launchTest.sh -a ${author} -h ${host} -c ${campaign} -k ${apikey}`;
+const launchTestCmd = `cerberus-github-action/launchTest.sh -a ${author} -h ${host} -c ${campaign} -k ${apikey} ${country} ${environment} ${robot} ${tag}`;
 
 log(`AUTHOR: ${getInputStr(author)}`);
 log(`HOST: ${getInputStr(host)}`);
 log(`CAMPAIGN: ${getInputStr(campaign)}`);
+log(`OVERRIDE COUNTRY: ${getInputStr(country)}`);
+log(`OVERRIDE ENVIRONMENT: ${getInputStr(environment)}`);
+log(`OVERRIDE ROBOT: ${getInputStr(robot)}`);
+log(`OVERRIDE TAG: ${getInputStr(tag)}`);
 
 
 log('clone project...');
