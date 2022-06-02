@@ -10,6 +10,14 @@ inputs:
     description: 'the name of the campaign to execute.'
   apikey: 
     description: 'your cerberus apikey.'
+  environment: 
+    description: 'Override the environment set into the campaign. You can put several separated by comma'
+  country: 
+    description: 'Override the country set into the campaign. You can put several separated by comma'
+  robot: 
+    description: 'Override the robot set into the campaign. You can put several separated by comma'
+  tag:
+    description: 'Force the tag with specific value'
 runs:
   using: 'node12'
   main: 'index.js'
