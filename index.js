@@ -17,10 +17,10 @@ const author = getInput('author');
 const host = getInput('host');
 const campaign = getInput('campaign');
 const apikey = getInput('apikey');
-const country = "-C " + getInput('country');
-const environment = "-E " + getInput('environment');
-const robot = "-R " + getInput('robot');
-const tag = "-T " + getInput('tag');
+const country = getInput('country')==="" ? "" : "-C " + getInput('country');
+const environment = getInput('environment')==="" ? "" : "-E " + getInput('environment');
+const robot = getInput('robot')==="" ? "" : "-R " + getInput('robot');
+const tag = getInput('tag')==="" ? "" : "-T " + getInput('tag');
        
 const gitCloneCmd    = `git clone https://github.com/cerberustesting/cerberus-github-action.git`;
 const chmodCmd    = `chmod +x cerberus-github-action/launchTest.sh`;
