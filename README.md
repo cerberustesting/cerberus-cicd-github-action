@@ -1,11 +1,11 @@
 # Run Cerberus GitHub Action
 
-This action trigger a [Cerberus](https://github.com/cerberustesting/cerberus-source) campaign execution and check for the result.
+This action trigger a [Cerberus](https://github.com/cerberustesting/cerberus-core) campaign execution and check for the result.
 
 ## Usage
 
 ```yaml
-- uses: cerberustesting/cerberus-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v1
   with:
     host: https://jftl.cerberus-testing.com
     campaign: API_NonRegression_UAT
@@ -23,7 +23,7 @@ The author is used for the tag automatic generation, in order to link the execut
 Your Cerberus host.
 
 ```yaml
-- uses: cerberustesting/cerberus-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v1
   with:
     host: https://my_instance.cerberus-testing.com
 ```
@@ -33,7 +33,7 @@ Your Cerberus host.
 The Campaign name you want to execute.
 
 ```yaml
-- uses: cerberustesting/cerberus-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v1
   with:
     campaign: My_Campaign
 ```
@@ -43,7 +43,7 @@ The Campaign name you want to execute.
 The name of the people that trigger the execution. It can be a generic name, or the name of the committer 
 
 ```yaml
-- uses: cerberustesting/cerberus-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v1
   with:
     author: ${{ github.event.pusher.name }}
 ```
@@ -53,13 +53,13 @@ The name of the people that trigger the execution. It can be a generic name, or 
 The apikey of your cerberus instance. You can hardcode it directly, of use the Secrets  
 
 ```yaml
-- uses: cerberustesting/cerberus-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v1
   with:
     apikey: AS23DVFERS45677GFDDVGREZ3345TGGHH554EDR
 ```
 
 ```yaml
-- uses: cerberustesting/cerberus-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v1
   with:
     apikey: ${{ secrets.APIKEY }}
 ```
@@ -71,7 +71,7 @@ The apikey of your cerberus instance. You can hardcode it directly, of use the S
 The number of seconds from which the execution will consider it's a fail
 
 ```yaml
-- uses: cerberustesting/cerberus-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v1
   with:
     timeout: 500
 ```
@@ -97,7 +97,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: cerberus-action
-      uses: cerberustesting/cerberus-github-action@v1
+      uses: cerberustesting/cerberus-cicd-github-action@v1
       with:
         host: https://jftl.cerberus-testing.com
         campaign: API_NonRegression_UAT
