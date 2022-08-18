@@ -22,9 +22,9 @@ const environment = getInput('environment')==="" ? "" : "-E " + getInput('enviro
 const robot = getInput('robot')==="" ? "" : "-R " + getInput('robot');
 const tag = getInput('tag')==="" ? "" : "-T " + getInput('tag');
        
-const gitCloneCmd    = `git clone https://github.com/cerberustesting/cerberus-github-action.git`;
-const chmodCmd    = `chmod +x cerberus-github-action/launchTest.sh`;
-const launchTestCmd = `cerberus-github-action/launchTest.sh -a ${author} -h ${host} -c ${campaign} -k ${apikey} ${country} ${environment} ${robot} ${tag}`;
+const gitCloneCmd    = `git clone https://github.com/cerberustesting/cerberus-cicd-github-action.git`;
+const chmodCmd    = `chmod +x cerberus-cicd-github-action/launchTest.sh`;
+const launchTestCmd = `cerberus-cicd-github-action/launchTest.sh -a ${author} -h ${host} -c ${campaign} -k ${apikey} ${country} ${environment} ${robot} ${tag}`;
 
 log(`AUTHOR: ${getInputStr(author)}`);
 log(`HOST: ${getInputStr(host)}`);
