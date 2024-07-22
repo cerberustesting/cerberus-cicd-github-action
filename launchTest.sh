@@ -52,13 +52,14 @@ then
     echo "Override Tag: $TAG";
     tag=$TAG
 else
-    tag=$CAMPAIGN.$AUTHOR.$(date +%s)
+    tag=$CAMPAIGN.$AUTHOR.$(date +%y%m%d-%H%M%S)
 fi
 EXTRA_ARGS+=(-d "tag=$tag")
 
 ###Run Campaign
 curl -s --request POST --url "$HOST/AddToExecutionQueueV003" -d campaign=$CAMPAIGN "${EXTRA_ARGS[@]}" -H "apikey:$APIKEY"
 echo
+sleep 3
 
 ###Loop on resultCI Until end of campaign
 num=1
@@ -78,4 +79,4 @@ if [[ "$result" != "OK" ]]; then
     echo "Campaign Failed. CIScore Higher than threshold !!!"
     exit 1
 fi
-echo "Campaign Succes. Congratulation !!!"
+echo "Campaign Successful. Congratulation !!!"
