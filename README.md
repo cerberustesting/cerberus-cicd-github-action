@@ -64,19 +64,33 @@ The apikey of your cerberus instance. You can hardcode it directly, of use the S
     apikey: ${{ secrets.APIKEY }}
 ```
 
-### timeout
+### iterationnb
 
 *Optional*
 
-The number of seconds from which the execution will consider it's a fail
+The max number of control iteration until the check time out. default to 500 (leeding to 25 min timeout with default iteration duration of 3 sec)
 
 ```yaml
-- uses: cerberustesting/cerberus-cicd-github-action@v1
+- uses: cerberustesting/cerberus-cicd-github-action@v7
   with:
-    timeout: 500
+    iterationnb: 700
 ```
 
-**Default value:** 300
+**Default value:** 500
+
+### iterationdur
+
+*Optional*
+
+The duration between 2 iteration contols. default to 3 (sec)
+
+```yaml
+- uses: cerberustesting/cerberus-cicd-github-action@v7
+  with:
+    iterationdur: 5
+```
+
+**Default value:** 3
 
 ## Examples
 
