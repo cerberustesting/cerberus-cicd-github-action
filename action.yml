@@ -18,6 +18,10 @@ inputs:
     description: 'Override the robot set into the campaign. You can put several separated by comma'
   tag:
     description: 'Force the tag with specific value'
+  iterationnb: 
+    description: 'the max number of iteration control performed before timing out - default to 500'
+  iterationdur: 
+    description: 'the duration between 2 control iterations - default to 3 s'
 runs:
   using: 'node12'
   main: 'index.js'
